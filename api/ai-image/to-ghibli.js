@@ -2,8 +2,6 @@
 const axios = require('axios');
 const FormData = require('form-data');
 const fs = require('fs');
-const path = require('path');
-const os = require('os');
 
 module.exports = {
   category: 'Image',
@@ -28,36 +26,43 @@ module.exports = {
       // Upload file ke CDN kalau ada
       if (hasFile) {
         const filePath = req.file.path;
-        const fileName = req.file.originalname;
-        const mimeType = req.file.mimetype;
+        const fileName = req.file.originalname || 'image.jpg';
+        const mimeType = req.file.mimetype || 'image/jpeg';
 
         const form = new FormData();
         form.append('file', fs.createReadStream(filePath), { filename: fileName, contentType: mimeType });
 
         const uploadRes = await axios.post('https://cdnn.ikyyxd.my.id/api/upload.php', form, {
           headers: form.getHeaders(),
-          timeout: 30000
+          timeout: 30000,
+          validateStatus: () => true
         });
 
-        imageUrl = uploadRes.data.url || uploadRes.data?.result?.url || '';
+        imageUrl = uploadRes.data?.url || uploadRes.data?.result?.url || '';
         
         // Cleanup temp file
         try { fs.unlinkSync(filePath); } catch (e) {}
       }
 
       if (!imageUrl) {
-        return res.status(500).json({ status: false, creator: 'Nanzz', message: 'Upload gagal' });
+        return res.status(500).json({ status: false, creator: 'Nanzz', message: 'Upload gagal — URL tidak didapat' });
       }
 
       // Edit gambar
       const editRes = await axios.get(`https://api.ikyyxd.my.id/edit/nanobananav3?url=${encodeURIComponent(imageUrl)}&prompt=${encodeURIComponent(prompt)}`, {
-        timeout: 120000
+        timeout: 120000,
+        validateStatus: () => true
       });
 
-      const resultUrl = editRes.data?.result?.result_url || editRes.data?.result?.url || '';
+      const resultUrl = editRes.data?.result?.result_url || editRes.data?.result?.url || editRes.data?.url || '';
 
       if (!resultUrl) {
-        return res.status(500).json({ status: false, creator: 'Nanzz', message: 'Edit gagal' });
+        return res.status(500).json({
+          status: false,
+          creator: 'Nanzz',
+          message: 'Edit gagal',
+          debug: JSON.stringify(editRes.data).substring(0, 300)
+        });
       }
 
       // Download & output
@@ -68,10 +73,16 @@ module.exports = {
 
       res.setHeader('Content-Type', 'image/png');
       res.setHeader('X-Creator', 'Nanzz');
+      res.setHeader('Cache-Control', 'public, max-age=3600');
       return res.send(Buffer.from(imgRes.data));
 
     } catch (err) {
-      return res.status(500).json({ status: false, creator: 'Nanzz', message: err.message });
+      return res.status(500).json({
+        status: false,
+        creator: 'Nanzz',
+        message: err.message,
+        debug: err.response?.data ? JSON.stringify(err.response.data).substring(0, 200) : ''
+      });
     }
   }
 };
