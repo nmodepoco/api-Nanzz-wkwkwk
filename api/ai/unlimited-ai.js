@@ -34,4 +34,25 @@ module.exports = {
         ],
         selectedChatModel: model, selectedCharacter: null, selectedStory: null, deviceId, locale: 'id'
       }, {
-        headers: { 'Content-Type': 'application/json', 'x-next-intl-l
+        headers: { 'Content-Type': 'application/json', 'User-Agent': 'Mozilla/5.0' },
+        timeout: 45000, responseType: 'text'
+      });
+
+      const lines = data.split('\n').filter(Boolean);
+      let fullText = '';
+      for (const line of lines) {
+        try {
+          const parsed = JSON.parse(line);
+          if (parsed.type === 'delta' && parsed.delta) fullText += parsed.delta;
+        } catch (e) {}
+      }
+
+      return res.json({
+        status: true, creator: 'Nanzz',
+        result: { text: fullText, totalChars: fullText.length, chatId, deviceId, model, locale: 'id' }
+      });
+    } catch (err) {
+      return res.status(500).json({ status: false, creator: 'Nanzz', message: err.message });
+    }
+  }
+};
