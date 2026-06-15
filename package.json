@@ -77,7 +77,6 @@
     "archiver": "^7.0.1",
     "tar": "^6.2.1",
     "cloudscraper": "^4.6.0",
-    "https-proxy-agent": "^5.0.1",
-    "better-sqlite3": "^9.4.3"
+    "https-proxy-agent": "^5.0.1"
   }
 }
