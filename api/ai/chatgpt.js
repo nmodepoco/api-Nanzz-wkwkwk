@@ -1,4 +1,4 @@
-// params : ?text=halo+apa+kabar&model=chatgpt
+// params : ?text=halo apa kabar&model=chatgpt
 const axios = require('axios');
 const crypto = require('crypto');
 const querystring = require('querystring');
