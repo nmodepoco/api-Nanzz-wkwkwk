@@ -3,8 +3,12 @@ FROM node:22-slim
 RUN apt-get update && apt-get install -y \
     ffmpeg \
     fonts-noto-color-emoji \
+    python3 \
+    make \
+    g++ \
     libnspr4 \
     libnss3 \
+    libdbus-1-3 \
     libatk1.0-0t64 \
     libatk-bridge2.0-0t64 \
     libcups2t64 \
