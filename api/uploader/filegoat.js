@@ -3,6 +3,9 @@ const axios = require('axios');
 const crypto = require('crypto');
 const FormData = require('form-data');
 const fs = require('fs');
+const multer = require('multer');
+
+const upload = multer({ dest: '/tmp/' });
 
 module.exports = {
   category: 'Upload',
@@ -13,7 +16,15 @@ module.exports = {
   desc: 'FileGoat Uploader — Upload file dapat link direct & download',
 
   async run(req, res) {
-    const file = req.file || (req.files || [])[0];
+    // Manual multer parse
+    await new Promise((resolve, reject) => {
+      upload.single('file')(req, res, (err) => {
+        if (err) reject(err);
+        else resolve();
+      });
+    });
+
+    const file = req.file;
 
     if (!file) {
       return res.status(400).json({ status: false, creator: 'Nanzz', message: 'File wajib diupload' });
