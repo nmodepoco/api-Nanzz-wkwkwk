@@ -9,8 +9,8 @@ module.exports = {
   creator: 'Nanzz',
   post: true,
   paramsFile: ['file'],
-  'desc-file': 'File yang ingin diupload',
-  desc: 'FileGoat Uploader — Upload file dapat link direct',
+  'desc-file': 'File yang ingin diupload ke FileGoat',
+  desc: 'FileGoat Uploader — Upload file dapat link direct & download',
 
   async run(req, res) {
     const file = req.file || (req.files || [])[0];
