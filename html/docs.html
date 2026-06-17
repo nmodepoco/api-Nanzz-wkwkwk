@@ -9,23 +9,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-[data-theme="dark"]{
-  --bg:#08081a; --bg2:#0c0c20; --card:#111128; --card2:#161638; --card3:#1b1b40;
-  --b1:rgba(110,60,230,.16); --b2:rgba(110,60,230,.32); --b3:rgba(110,60,230,.52);
-  --p:#7c3aed; --p2:#9061f9; --p3:#b48bfc; --pg:rgba(124,58,237,.18);
-  --cyan:#22d3ee; --green:#22c55e; --red:#f43f5e; --yellow:#fbbf24;
-  --tx:#eeeeff; --tx2:#c0c0e0; --mu:#4a4a78; --mu2:#8080b8;
-  --nav:rgba(8,8,26,.90); --inp:#070716; --resp:#050514;
-}
-[data-theme="light"]{
-  --bg:#f2f0ff; --bg2:#ebe7ff; --card:#ffffff; --card2:#f6f3ff; --card3:#eee9ff;
-  --b1:rgba(100,50,200,.12); --b2:rgba(100,50,200,.26); --b3:rgba(100,50,200,.48);
-  --p:#6d28d9; --p2:#7c3aed; --p3:#8b5cf6; --pg:rgba(109,40,217,.12);
-  --cyan:#0891b2; --green:#16a34a; --red:#dc2626; --yellow:#d97706;
-  --tx:#1e1040; --tx2:#3d3070; --mu:#a090c0; --mu2:#6050a0;
-  --nav:rgba(242,240,255,.93); --inp:#eae6ff; --resp:#e6e2ff;
-}
-:root{--mono:'Share Tech Mono',monospace;--head:'Orbitron',sans-serif;--body:'Rajdhani',sans-serif;--r:14px;--rs:10px;--rx:7px;}
+[data-theme="dark"]{--bg:#08081a;--bg2:#0c0c20;--card:#111128;--card2:#161638;--card3:#1b1b40;--b1:rgba(110,60,230,.16);--b2:rgba(110,60,230,.32);--b3:rgba(110,60,230,.52);--p:#7c3aed;--p2:#9061f9;--p3:#b48bfc;--pg:rgba(124,58,237,.18);--cyan:#22d3ee;--green:#22c55e;--red:#f43f5e;--yellow:#fbbf24;--tx:#eeeeff;--tx2:#c0c0e0;--mu:#4a4a78;--mu2:#8080b8;--nav:rgba(8,8,26,.90);--inp:#070716;--resp:#050514}
+[data-theme="light"]{--bg:#f2f0ff;--bg2:#ebe7ff;--card:#ffffff;--card2:#f6f3ff;--card3:#eee9ff;--b1:rgba(100,50,200,.12);--b2:rgba(100,50,200,.26);--b3:rgba(100,50,200,.48);--p:#6d28d9;--p2:#7c3aed;--p3:#8b5cf6;--pg:rgba(109,40,217,.12);--cyan:#0891b2;--green:#16a34a;--red:#dc2626;--yellow:#d97706;--tx:#1e1040;--tx2:#3d3070;--mu:#a090c0;--mu2:#6050a0;--nav:rgba(242,240,255,.93);--inp:#eae6ff;--resp:#e6e2ff}
+:root{--mono:'Share Tech Mono',monospace;--head:'Orbitron',sans-serif;--body:'Rajdhani',sans-serif;--r:14px;--rs:10px;--rx:7px}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--tx);font-family:var(--body);font-size:15px;min-height:100vh;overflow-x:hidden;transition:background .3s,color .3s}
@@ -35,18 +21,7 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;bac
 .b2{width:360px;height:360px;bottom:0;left:-120px;background:radial-gradient(circle,var(--pg) 0%,transparent 70%);animation:bF 11s ease-in-out infinite alternate-reverse}
 @keyframes bF{0%{transform:translate(0,0)}100%{transform:translate(18px,-22px)}}
 ::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:var(--b2);border-radius:4px}
-
-#splash{position:fixed;inset:0;z-index:99999;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;transition:opacity .5s,visibility .5s}
-#splash.hidden{opacity:0;visibility:hidden;pointer-events:none}
-#splash .splash-logo{font-family:var(--head);font-size:2rem;font-weight:900;color:var(--p2);letter-spacing:4px;animation:logoGlow 1.5s ease-in-out infinite}
-#splash .splash-logo em{color:var(--p3);font-style:normal}
-.splash-bar-wrap{width:200px;height:4px;background:var(--card2);border-radius:4px;overflow:hidden}
-.splash-bar-fill{height:100%;width:0;background:linear-gradient(90deg,#7c3aed,#a78bfa,#c084fc,#7c3aed);background-size:300% 100%;animation:splashFill 2s ease-out forwards,loadingBarRGB 1.5s linear infinite}
-@keyframes splashFill{0%{width:0}100%{width:100%}}
-@keyframes loadingBarRGB{0%{background-position:300% 0}100%{background-position:-300% 0}}
-@keyframes logoGlow{0%,100%{opacity:1}50%{opacity:.7}}
-
-.wrap{position:relative;z-index:1;max-width:480px;margin:0 auto;padding:0 0 40px;display:flex;flex-direction:column}
+.wrap{position:relative;z-index:1;max-width:480px;margin:0 auto;padding:0 0 30px;display:flex;flex-direction:column}
 .nav{display:flex;align-items:center;justify-content:space-between;padding:13px 16px;position:sticky;top:0;z-index:200;background:var(--nav);border-bottom:1px solid var(--b2)}
 .nav-logo{font-family:var(--head);font-size:.82rem;font-weight:900;color:var(--p2);letter-spacing:3px}
 .nav-logo em{color:var(--p3);font-style:normal}
@@ -71,7 +46,6 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;bac
 .srch-ic{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:var(--mu);font-size:.78rem}
 .srch-inp{width:100%;background:var(--card);border:1px solid var(--b2);border-radius:var(--rs);padding:12px 12px 12px 38px;font-family:var(--mono);font-size:.74rem;color:var(--tx);outline:none;transition:all .2s}
 .srch-inp:focus{border-color:var(--p2);box-shadow:0 0 0 2px var(--pg)}
-.srch-inp::placeholder{color:var(--mu)}
 .chips-wrap{padding:10px 16px 2px;overflow-x:auto;display:flex;gap:8px;scrollbar-width:none}
 .chips-wrap::-webkit-scrollbar{display:none}
 .chip{display:inline-flex;align-items:center;gap:6px;flex-shrink:0;padding:7px 14px;border-radius:999px;cursor:pointer;font-family:var(--head);font-size:.58rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:var(--card2);border:1px solid var(--b2);color:var(--mu2);transition:all .18s;user-select:none}
@@ -106,6 +80,13 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;bac
 .fi{width:100%;background:var(--inp);border:1px solid var(--b2);border-radius:var(--rx);padding:9px 11px;font-family:var(--mono);font-size:.7rem;color:var(--tx);outline:none;transition:all .18s}
 .fi:focus{border-color:var(--p2);box-shadow:0 0 0 2px var(--pg)}
 select.fi{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%234a4a78'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 9px center;background-size:11px;padding-right:26px;cursor:pointer}
+/* === FILE UPLOAD BUTTON KEREN === */
+.file-upload-wrapper{position:relative;width:100%}
+.file-upload-wrapper .file-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:12px 14px;background:linear-gradient(135deg,var(--b1),var(--b2));border:2px dashed var(--b3);border-radius:var(--rx);cursor:pointer;font-family:var(--mono);font-size:.65rem;font-weight:700;color:var(--p3);transition:all .2s;text-align:center}
+.file-upload-wrapper .file-btn:hover{border-color:var(--p2);background:rgba(124,58,237,.1);color:var(--p2)}
+.file-upload-wrapper .file-btn i{font-size:.85rem}
+.file-upload-wrapper .file-btn .file-name{max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--mu2)}
+.file-upload-wrapper input[type="file"]{position:absolute;inset:0;opacity:0;cursor:pointer}
 .ul{font-family:var(--mono);font-size:.56rem;font-weight:700;color:var(--mu);margin-bottom:4px;display:block;letter-spacing:1.5px;text-transform:uppercase}
 .ub{background:var(--inp);border:1px solid var(--b1);border-radius:var(--rx);padding:7px 10px;display:flex;align-items:flex-start;gap:6px;margin-bottom:10px}
 .ut{font-family:var(--mono);font-size:.62rem;color:var(--cyan);word-break:break-all;flex:1;line-height:1.5}
@@ -113,8 +94,8 @@ select.fi{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns=
 .icb:hover{background:var(--card3);color:var(--tx)}
 .xbtn{width:100%;padding:14px 16px;background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;border:none;border-radius:var(--rx);font-family:var(--head);font-size:.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;box-shadow:0 4px 14px var(--pg);transition:all .18s;margin-top:4px}
 .xbtn:hover{transform:translateY(-2px);box-shadow:0 8px 22px var(--pg)}
-.xbtn:disabled{opacity:.45;cursor:not-allowed;transform:none}
-.rw{margin-top:10px;border:1px solid var(--b1);border-radius:var(--rx);overflow:hidden;background:var(--resp)}
+.xbtn:disabled{opacity:.45;cursor:not-allowed}
+.rw{margin-top:10px;border:1px solid var(--b1);border-radius:var(--rx);overflow:hidden;background:var(--resp);display:none}
 .rh{background:var(--card3);padding:6px 10px;display:flex;align-items:center;gap:6px;border-bottom:1px solid var(--b1)}
 .rd{width:7px;height:7px;border-radius:50%;background:var(--mu)}
 .rd.ok{background:var(--green);box-shadow:0 0 5px var(--green)}
@@ -143,11 +124,6 @@ footer a:hover{color:var(--p3)}
 .to.active .tsw{border-color:var(--p2)}
 .tck{margin-left:auto;color:var(--p3);font-size:.6rem;opacity:0;transition:opacity .18s}
 .to.active .tck{opacity:1}
-.bottom-actions{padding:16px;margin-top:20px;display:flex;gap:8px}
-.btn-nonton-baca{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 16px;background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;border:none;border-radius:var(--r);font-family:var(--head);font-size:.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;text-decoration:none;box-shadow:0 4px 14px var(--pg);transition:all .18s}
-.btn-nonton-baca:hover{transform:translateY(-2px);box-shadow:0 8px 22px var(--pg)}
-.total-endpoint-inline{display:flex;align-items:center;gap:6px;padding:12px 16px;background:var(--card);border:1px solid var(--b2);border-radius:var(--r);font-family:var(--mono);font-size:.65rem;font-weight:700;color:var(--p3);white-space:nowrap}
-.total-endpoint-inline span{color:var(--tx2)}
 .empty{text-align:center;padding:44px 16px;font-family:var(--mono);font-size:.7rem;color:var(--mu)}
 .empty i{font-size:1.6rem;display:block;margin-bottom:10px;color:var(--b2)}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
@@ -156,11 +132,6 @@ footer a:hover{color:var(--p3)}
 </style>
 </head>
 <body>
-
-<div id="splash">
-  <div class="splash-logo">NANZZ<em>API</em></div>
-  <div class="splash-bar-wrap"><div class="splash-bar-fill"></div></div>
-</div>
 
 <div class="blob b1"></div>
 <div class="blob b2"></div>
@@ -174,401 +145,123 @@ footer a:hover{color:var(--p3)}
 
 <div class="td" id="td">
   <div class="td-h">// TEMA</div>
-  <div class="to active" data-theme="dark" onclick="setTheme('dark')">
-    <div class="tsw" style="background:linear-gradient(135deg,#08081a,#7c3aed)"></div>🌙 Dark<i class="fas fa-check tck"></i>
-  </div>
-  <div class="to" data-theme="light" onclick="setTheme('light')">
-    <div class="tsw" style="background:linear-gradient(135deg,#f2f0ff,#6d28d9);border:1px solid #c4b5fd"></div>☀️ Light<i class="fas fa-check tck"></i>
-  </div>
+  <div class="to active" data-theme="dark" onclick="setTheme('dark')"><div class="tsw" style="background:linear-gradient(135deg,#08081a,#7c3aed)"></div> Dark<i class="fas fa-check tck"></i></div>
+  <div class="to" data-theme="light" onclick="setTheme('light')"><div class="tsw" style="background:linear-gradient(135deg,#f2f0ff,#6d28d9)"></div> Light<i class="fas fa-check tck"></i></div>
 </div>
 
 <div class="wrap">
   <div class="hero">
-    <div class="vid-box">
-      <video autoplay muted loop playsinline id="hero-vid">
-        <source src="https://kappa.lol/2HLn5j" type="video/mp4">
-      </video>
-    </div>
+    <div class="vid-box"><video autoplay muted loop playsinline id="hero-vid"><source src="https://kappa.lol/2HLn5j" type="video/mp4"></video></div>
     <div class="hero-body">
       <div class="eyebrow">FREE REST API</div>
       <div class="htitle">NANZZAPI<br><span>DOCS</span></div>
-      <div class="hsub">Explore & test live endpoints — all media supported.</div>
+      <div class="hsub">Explore & test live endpoints.</div>
       <div class="hbtns">
-        <a href="https://wa.me/6283178098872" target="_blank" class="btn-o"><i class="fas fa-code"></i> Contact Dev</a>
-        <a href="https://wa.me/6283178098872" target="_blank" class="btn-o"><i class="fas fa-bug"></i> Feedback</a>
+        <a href="https://wa.me/6283178098872" target="_blank" class="btn-o"><i class="fas fa-code"></i> Contact</a>
         <a href="https://whatsapp.com/channel/0029VbC1zvC4NVinIpJqza0h" target="_blank" class="btn-o"><i class="fab fa-whatsapp"></i> Channel</a>
-        <a href="https://chat.whatsapp.com/Lhfb885LgC13hnMld07oOn" target="_blank" class="btn-o"><i class="fas fa-users"></i> Group</a>
       </div>
     </div>
   </div>
 
   <div class="sec" style="margin-top:14px;animation:fadeUp .4s .1s ease both;">
-    <div class="srch">
-      <i class="fas fa-search srch-ic"></i>
-      <input type="text" id="searchInput" class="srch-inp" placeholder="Filter endpoints..." autocomplete="off" spellcheck="false"/>
-    </div>
+    <div class="srch"><i class="fas fa-search srch-ic"></i><input type="text" id="searchInput" class="srch-inp" placeholder="Cari endpoint..." autocomplete="off"/></div>
   </div>
 
   <div class="chips-wrap" id="chips-wrap"></div>
   <div id="ep-panel" class="ep-panel hidden"></div>
   <div id="search-panel" class="ep-panel hidden" style="margin-top:4px;"></div>
 
-  <div class="bottom-actions">
-    <a href="https://api-nanas.my.id" target="_blank" class="btn-nonton-baca">
-      ▶ Endpoint Nonton &amp; Baca 📖
-    </a>
-    <div class="total-endpoint-inline">
-      ⚡ <span id="bottom-ep-count">—</span>
-    </div>
-  </div>
-
-  <footer>
-    NANZZAPI V2 &copy; 2026 · All rights reserved<br>
-    <a href="#">Docs</a> · <a href="https://wa.me/6283178098872">Support</a>
-  </footer>
+  <footer>NANZZAPI V2 &copy; 2026<br><a href="/">Home</a> · <a href="https://wa.me/6283178098872">Support</a></footer>
 </div>
 
 <div id="toast" class="toast"></div>
 
 <script>
-let EPS=[], CATS=new Map(), CUR_CAT='all', CUR_RESP=null;
+let CONFIG=null,ACTIVE_CAT='all';
+const $=id=>document.getElementById(id),$$=sel=>document.querySelectorAll(sel);
 
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
-
-function tj(v,d){
-  d=d||0;
+function tj(v,d=0){
   if(v===null)return'<span style="color:var(--red)">null</span>';
   if(typeof v==='boolean')return'<span style="color:#f9a8d4">'+v+'</span>';
   if(typeof v==='number')return'<span style="color:var(--yellow)">'+v+'</span>';
   if(typeof v==='string')return'<span style="color:var(--green)">"'+esc(v)+'"</span>';
-  if(Array.isArray(v)){
-    if(!v.length)return'<span style="color:var(--mu2)">[]</span>';
-    const ind='  '.repeat(d+1);
-    return'<span style="color:var(--mu2)">[</span>\n'+v.map(x=>ind+tj(x,d+1)).join('<span style="color:var(--mu2)">,</span>\n')+'\n'+'  '.repeat(d)+'<span style="color:var(--mu2)">]</span>';
-  }
-  const ks=Object.keys(v);
-  if(!ks.length)return'<span style="color:var(--mu2)">{}</span>';
-  const ind='  '.repeat(d+1);
-  return'<span style="color:var(--mu2)">{</span>\n'+ks.map(k=>ind+'<span style="color:#93c5fd">"'+esc(k)+'"</span><span style="color:var(--mu2)">: </span>'+tj(v[k],d+1)).join('<span style="color:var(--mu2)">,</span>\n')+'\n'+'  '.repeat(d)+'<span style="color:var(--mu2)">}</span>';
+  if(Array.isArray(v)){if(!v.length)return'[]';const ind='  '.repeat(d+1);return'[\n'+v.map(x=>ind+tj(x,d+1)).join(',\n')+'\n'+'  '.repeat(d)+']';}
+  const ks=Object.keys(v);if(!ks.length)return'{}';const ind='  '.repeat(d+1);
+  return'{\n'+ks.map(k=>ind+'<span style="color:#93c5fd">"'+esc(k)+'"</span>: '+tj(v[k],d+1)).join(',\n')+'\n'+'  '.repeat(d)+'}';
 }
+function toast(msg){const t=$('toast');t.textContent=msg;t.classList.add('show');clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),2000);}
+function setTheme(n){document.documentElement.setAttribute('data-theme',n);localStorage.setItem('nz_t',n);$$('.to').forEach(e=>e.classList.toggle('active',e.dataset.theme===n));$('td').classList.remove('open');const src=n==='light'?'https://kappa.lol/uJWEb9':'https://kappa.lol/2HLn5j';const vid=$('hero-vid');if(vid){vid.querySelector('source').src=src;vid.load();}}
+function toggleTD(){$('td').classList.toggle('open');}
+document.addEventListener('click',e=>{const d=$('td'),b=$('tb');if(!d.contains(e.target)&&!b.contains(e.target))d.classList.remove('open');});
 
-function convertData(raw){
-  const res=[];CATS.clear();
-  const cats=raw.endpoints||raw;
-  cats.forEach(cat=>{
-    const cn=cat.name||'Uncategorized';
-    if(!CATS.has(cn))CATS.set(cn,[]);
-    if(cat.items&&cat.items.length){
-      cat.items.forEach(item=>{
-        const isPost=item.post===true;
-        const pp=(item.path||'').split('?')[1]||'';
-        const hasFile=item.paramsFile&&item.paramsFile.length;
-        const needsKey=item.needsApiKey===true;
-        let params={required:[],fileFields:item.paramsFile||[]};
-        const paramSource=item.paramInfo&&item.paramInfo.length?item.paramInfo
-          :(item.params&&item.params.length?item.params.map(p=>({name:p.split('=')[0].trim(),desc:item['desc-'+p.split('=')[0].trim()]||'',example:''}))
-          :pp.split('&').filter(Boolean).map(p=>p.split('=')[0]));
-        paramSource.forEach(pi=>{
-          const n=typeof pi==='string'?pi:pi.name||'';
-          if(!n)return;
-          const ex=pi.example||'';
-          const sel=pi.select||null;
-          params.required.push({name:n,desc:pi.desc||item['desc-'+n]||'',ex,select:sel});
-        });
-        if(item.paramsFile){
-          item.paramsFile.forEach(fn=>{
-            if(!params.required.find(p=>p.name===fn)){
-              params.required.push({name:fn,desc:item['desc-'+fn]||'Upload file',ex:'',select:null});
-            }
-          });
-        }
-        let alias=item.path.split('?')[0].split('/').pop();
-        if(['v1','v2','v3'].includes(alias)){const par=item.path.split('/').slice(-2,-1)[0];alias=par?`${par} ${alias}`:alias;}
-        alias=alias.replace(/-/g,' ').replace(/\b\w/g,l=>l.toUpperCase());
-        res.push({id:res.length,alias,method:isPost?'POST':'GET',path:item.path.split('?')[0],category:cn,tags:[cn,isPost?'POST':'GET'],params,hasFile,needsKey,paramsFile:item.paramsFile||[],subfolder:item.subfolder||null,desc:item.desc||'',rawPath:item.path});
-        CATS.get(cn).push(res[res.length-1]);
-      });
+function buildChips(){const tags=CONFIG?.tags||{};let h='<div class="chip active" onclick="filterCat(\'all\')">All</div>';Object.keys(tags).forEach(cat=>{h+=`<div class="chip" onclick="filterCat('${cat}')">${cat}</div>`;});$('chips-wrap').innerHTML=h;}
+function filterCat(cat){ACTIVE_CAT=cat;$$('.chip').forEach(c=>c.classList.toggle('active',(c.textContent===cat)||(cat==='all'&&c.textContent==='All')));$('search-panel').classList.add('hidden');$('ep-panel').classList.remove('hidden');renderByCat();}
+
+function renderByCat(){const tags=CONFIG?.tags||{};let h='';Object.entries(tags).forEach(([cat,routes])=>{if(ACTIVE_CAT!=='all'&&cat!==ACTIVE_CAT)return;h+=`<div class="sub-heading"><i class="fas fa-folder"></i>${cat}</div>`;routes.forEach((r,i)=>{h+=renderCard(r,cat,i);});});$('ep-panel').innerHTML=h||'<div class="empty"><i class="fas fa-inbox"></i>Tidak ada endpoint</div>';}
+
+function searchEndpoints(q){const tags=CONFIG?.tags||{};const all=[];Object.entries(tags).forEach(([cat,routes])=>{routes.forEach(r=>all.push({...r,category:cat}));});const filtered=all.filter(r=>(r.name||'').toLowerCase().includes(q)||(r.endpoint||'').toLowerCase().includes(q));let h='';filtered.forEach((r,i)=>{h+=renderCard(r,r.category,i);});$('search-panel').innerHTML=h||'<div class="empty"><i class="fas fa-search"></i>Tidak ada hasil</div>';$('search-panel').classList.remove('hidden');$('ep-panel').classList.add('hidden');}
+
+function renderCard(r,cat,i){
+  const mid=`${cat}-${i}`;
+  const params=(r.params||[]).map(p=>{
+    const sel=r.paramsSelect?.[p.name];
+    const isFile=(r.method==='POST'&&(r.params||[]).length===1);
+    if(isFile||sel===undefined){}
+    if(p.name==='file'||isFile){
+      return`<div class="fg"><div class="fl"><span class="fn">${p.name}</span><span class="ft">file</span><span class="fr">*</span></div><div class="file-upload-wrapper"><input type="file" class="fi" id="i-${mid}-${p.name}"><div class="file-btn"><i class="fas fa-cloud-upload-alt"></i> <span class="file-name" id="fn-${mid}-${p.name}">Pilih file...</span></div></div></div>`;
     }
-  });
-  return res;
-}
-
-function renderSidebar(){
-  const t=EPS.length;
-  const beEl=document.getElementById('bottom-ep-count');if(beEl)beEl.textContent=t;
-  const tree=new Map();
-  EPS.forEach(ep=>{
-    const parts=ep.path.replace(/^\//,'').split('/');
-    const folder=parts[0]||'other';
-    if(!tree.has(folder))tree.set(folder,[]);
-    tree.get(folder).push(ep);
-  });
-  let h='';
-  for(let[folder,eps]of tree){
-    h+=`<div class="chip" data-folder="${esc(folder)}" onclick="selectFolder('${esc(folder)}')"><i class="fas fa-folder"></i>${esc(folder)} <span style="opacity:.55;font-size:.52rem">${eps.length}</span></div>`;
-  }
-  document.getElementById('chips-wrap').innerHTML=h;
-}
-
-function selectFolder(folder){
-  CUR_CAT=folder;
-  document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('active',c.dataset.folder===folder));
-  document.getElementById('search-panel').classList.add('hidden');
-  document.getElementById('ep-panel').classList.remove('hidden');
-  renderEpsByFolder(folder);
-}
-
-function renderEpsByFolder(folder){
-  let f=EPS.filter(ep=>ep.path.replace(/^\//,'').split('/')[0]===folder);
-  const c=document.getElementById('ep-panel');
-  if(!f.length){c.innerHTML='<div class="empty"><i class="fas fa-inbox"></i>Tidak ada endpoint</div>';return;}
-  c.innerHTML=f.map(ep=>renderCard(ep)).join('');
-  f.forEach(ep=>updateCurl(ep.id));
-}
-
-function renderEps(filter=''){
-  const s=filter.toLowerCase();
-  let f=EPS;
-  if(s)f=EPS.filter(e=>e.alias.toLowerCase().includes(s)||e.path.toLowerCase().includes(s)||e.category.toLowerCase().includes(s));
-  const c=document.getElementById('search-panel');
-  if(!f.length){c.innerHTML='<div class="empty"><i class="fas fa-search"></i>Tidak ada hasil</div>';c.classList.remove('hidden');document.getElementById('ep-panel').classList.add('hidden');return;}
-  c.innerHTML=f.map(ep=>renderCard(ep)).join('');
-  c.classList.remove('hidden');
-  document.getElementById('ep-panel').classList.add('hidden');
-  f.forEach(ep=>updateCurl(ep.id));
-}
-
-function renderCard(ep){
-  const keyBadge=ep.needsKey?'<span style="background:var(--yellow);color:#000;padding:2px 7px;border-radius:2px;font-size:.55rem;font-weight:700;margin-left:6px;">NEEDS APIKEY</span>':'';
-  const apikeyField=ep.needsKey?`
-    <div class="fg" style="background:rgba(251,191,36,0.05);border:1px solid rgba(251,191,36,0.2);border-left:2px solid var(--yellow);padding:10px;margin-bottom:12px;border-radius:var(--rx)">
-      <div class="fl" style="color:var(--yellow);font-size:.55rem;text-transform:uppercase;letter-spacing:2px">🔑 API Key</div>
-      <input type="text" class="fi" style="background:rgba(0,0,0,.3);border-color:rgba(251,191,36,0.3);color:var(--yellow)" id="ak-${ep.id}" placeholder="masukkan apikey..." oninput="updateCurl(${ep.id})"/>
-    </div>`:'';
-  const params=(ep.params.required||[]).map(p=>{
-    if(p.select&&p.select.length){
-      const o=p.select.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join('');
-      return`<div class="fg"><div class="fl"><span class="fn">${esc(p.name)}</span><span class="ft">select</span><span class="fr">*</span></div><select class="fi" id="i-${ep.id}-${esc(p.name)}" onchange="updateCurl(${ep.id})"><option value="" disabled selected>-- Pilih --</option>${o}</select></div>`;
-    }
-    const isFile=ep.hasFile&&ep.paramsFile&&ep.paramsFile.includes(p.name);
-    if(isFile)return`<div class="fg"><div class="fl"><span class="fn">${esc(p.name)}</span><span class="ft">file</span><span class="fr">*</span></div><input type="file" class="fi" id="i-${ep.id}-${esc(p.name)}" onchange="updateCurl(${ep.id})"></div>`;
-    return`<div class="fg"><div class="fl"><span class="fn">${esc(p.name)}</span><span class="ft">string</span><span class="fr">*</span></div><input type="text" class="fi" id="i-${ep.id}-${esc(p.name)}" value="${esc(p.ex||'')}" placeholder="${esc(p.name)}" oninput="updateCurl(${ep.id})"></div>`;
+    if(sel)return`<div class="fg"><div class="fl"><span class="fn">${p.name}</span><span class="ft">select</span><span class="fr">${p.required?'*':''}</span></div><select class="fi" id="i-${mid}-${p.name}">${sel.map(o=>`<option>${o}</option>`).join('')}</select></div>`;
+    return`<div class="fg"><div class="fl"><span class="fn">${p.name}</span><span class="ft">string</span><span class="fr">${p.required?'*':''}</span></div><input class="fi" id="i-${mid}-${p.name}" placeholder="${p.description||p.name}"></div>`;
   }).join('');
-  const mc=ep.method==='GET'?'g':'po';
-  return`<div class="ep-item" id="ep-${ep.id}">
-  <div class="ep-hdr" onclick="toggleCard(${ep.id})">
-    <span class="mb ${mc}">${ep.method}</span>
-    <span class="ep-name">${esc(ep.alias)}${keyBadge}</span>
-    <i class="fas fa-chevron-down ep-chv" id="ci-${ep.id}"></i>
-  </div>
-  <div class="ep-bw"><div class="ep-b"><div class="ep-bi" id="cb-${ep.id}">
-    ${ep.desc?`<div class="ep-info"><i class="fas fa-circle-info"></i><span>${esc(ep.desc)}</span></div>`:''}
-    ${apikeyField}
-    ${params}
-    <span class="ul">Request URL</span>
-    <div class="ub"><span class="ut" id="u-${ep.id}">${buildCurl(ep)}</span><button class="icb" onclick="copyCurl(${ep.id})"><i class="fas fa-copy"></i></button></div>
-    <button class="xbtn" id="btn-${ep.id}" onclick="execReq(${ep.id})"><i class="fas fa-bolt"></i> Execute</button>
-    <div class="rw" id="rs-${ep.id}" style="display:none">
-      <div class="rh">
-        <div class="rd" id="rd-${ep.id}"></div>
-        <span class="rs" id="rst-${ep.id}">IDLE</span>
-        <span class="rs" id="rms-${ep.id}" style="margin-left:4px">—ms</span>
-        <button class="icb" style="margin-left:auto" onclick="copyResp(${ep.id})"><i class="fas fa-copy"></i></button>
-      </div>
-      <div class="rb" id="rb-${ep.id}"><pre class="rp">// Awaiting...</pre></div>
-    </div>
-  </div></div></div></div>`;
+  const mc=r.method==='GET'?'g':'po';
+  return`<div class="ep-item" id="ep-${mid}"><div class="ep-hdr" onclick="toggleEP('ep-${mid}')"><span class="mb ${mc}">${r.method}</span><span class="ep-name">${r.name||r.endpoint}</span><i class="fas fa-chevron-down ep-chv"></i></div><div class="ep-bw"><div class="ep-b"><div class="ep-bi"><div class="ep-info"><i class="fas fa-circle-info"></i><span>${r.description||''}</span></div>${params}<span class="ul">Request URL</span><div class="ub"><span class="ut" id="u-${mid}">${location.origin}${r.endpoint}</span><button class="icb" onclick="navigator.clipboard.writeText($('u-${mid}').textContent);toast('Copied!')"><i class="fas fa-copy"></i></button></div><button class="xbtn" id="btn-${mid}" onclick="exec('${mid}','${r.endpoint}','${r.method}')"><i class="fas fa-bolt"></i> Execute</button><div class="rw" id="rw-${mid}"><div class="rh"><div class="rd" id="rd-${mid}"></div><span class="rs" id="rs-${mid}">IDLE</span><span class="rs" id="rms-${mid}" style="margin-left:4px">ms</span><button class="icb" style="margin-left:auto" onclick="copyResp('${mid}')"><i class="fas fa-copy"></i></button></div><div class="rb" id="rb-${mid}"><pre class="rp">// Awaiting...</pre></div></div></div></div></div></div>`;
 }
 
-function getApiKey(id){
-  const inp=document.getElementById(`ak-${id}`);
-  return inp?inp.value.trim():'';
-}
+window.toggleEP=id=>$(id)?.classList.toggle('open');
 
-function buildCurl(id){
-  const ep=EPS.find(e=>e.id===id);if(!ep)return'';
-  const ak=getApiKey(id);
-  let u=window.location.origin+ep.path;
-  if(ep.method==='GET'){
-    const p=[];
-    document.querySelectorAll(`#cb-${id} input[type="text"], #cb-${id} select`).forEach(i=>{
-      if(i.id.startsWith('ak-'))return;
-      if(i.type==='file')return;
-      if(i.value)p.push(`${encodeURIComponent(i.name||i.id.split('-').pop())}=${encodeURIComponent(i.value)}`);
-    });
-    if(ak)p.push(`apikey=${encodeURIComponent(ak)}`);
-    if(p.length)u+='?'+p.join('&');
-  }
-  return u;
-}
+// FILE NAME UPDATE
+document.addEventListener('change',function(e){if(e.target.type==='file'){const fn=document.getElementById('fn-'+e.target.id.replace('i-',''));if(fn)fn.textContent=e.target.files[0]?.name||'Pilih file...';}});
 
-function updateCurl(id){
-  const el=document.getElementById(`u-${id}`);
-  if(el)el.textContent=buildCurl(id);
-}
+let lastResp=null;
+window.copyResp=id=>{if(lastResp)navigator.clipboard.writeText(lastResp).then(()=>toast('Copied!'));};
 
-function copyCurl(id){
-  const el=document.getElementById(`u-${id}`);
-  if(el)navigator.clipboard.writeText(el.textContent).then(()=>showToast('Copied!'));
-}
-
-function copyResp(id){
-  if(CUR_RESP!==null)navigator.clipboard.writeText(typeof CUR_RESP==='object'?JSON.stringify(CUR_RESP,null,2):String(CUR_RESP)).then(()=>showToast('Copied!'));
-}
-
-function toggleCard(id){
-  const ep=document.getElementById(`ep-${id}`);
-  if(!ep)return;
-  ep.classList.toggle('open');
-}
-
-async function execReq(id){
-  const ep=EPS.find(e=>e.id===id);if(!ep)return;
-  let url=window.location.origin+ep.path;
-  const t0=Date.now();
-  const rs=document.getElementById(`rs-${id}`),rb=document.getElementById(`rb-${id}`);
-  const rst=document.getElementById(`rst-${id}`),rms=document.getElementById(`rms-${id}`),rd=document.getElementById(`rd-${id}`);
-  const btn=document.getElementById(`btn-${id}`);
-  rb.innerHTML='<pre class="rp">▸ executing...</pre>';rs.style.display='block';
-  if(btn){btn.innerHTML='<i class="fas fa-circle-notch fa-spin"></i> LOADING';btn.disabled=true;}
-  rd.className='rd ld';rst.textContent='LOADING';rst.className='rs';
-  const ak=getApiKey(id);
+async function exec(mid,ep,method){
+  const rw=$('rw-'+mid),rb=$('rb-'+mid),rs=$('rs-'+mid),rd=$('rd-'+mid),rms=$('rms-'+mid),btn=$('btn-'+mid);
+  rw.style.display='block';rb.innerHTML='<pre class="rp">Loading...</pre>';rd.className='rd ld';rs.textContent='LOADING';
+  btn.disabled=true;btn.innerHTML='<i class="fas fa-circle-notch fa-spin"></i>';
+  let url=location.origin+ep;const t0=Date.now();
+  const fileInput=$$(`[id^="i-${mid}-"][type="file"]`)[0];
   try{
     let res;
-    if(ep.method==='GET'){
-      const p=[];
-      document.querySelectorAll(`#cb-${id} input[type="text"], #cb-${id} select`).forEach(i=>{
-        if(i.id.startsWith('ak-'))return;
-        if(i.type==='file')return;
-        if(i.value)p.push(`${encodeURIComponent(i.name||i.id.split('-').pop())}=${encodeURIComponent(i.value)}`);
-      });
-      if(ak)p.push(`apikey=${encodeURIComponent(ak)}`);
-      if(p.length)url+='?'+p.join('&');
-      res=await fetch(url);
+    if(fileInput&&fileInput.files[0]){
+      const fd=new FormData();
+      fd.append(fileInput.id.replace('i-'+mid+'-',''),fileInput.files[0]);
+      const others=$$(`[id^="i-${mid}-"]:not([type="file"])`);
+      others.forEach(inp=>{if(inp.value)fd.append(inp.id.replace('i-'+mid+'-',''),inp.value);});
+      res=await fetch(url,{method:'POST',body:fd});
+    }else if(method==='POST'){
+      res=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:'{}'});
     }else{
-      const fileInput=document.querySelector(`#cb-${id} input[type="file"]`);
-      if(fileInput?.files?.[0]){
-        const fd=new FormData();
-        const fieldName=(ep.paramsFile&&ep.paramsFile[0])||'image';
-        fd.append(fieldName,fileInput.files[0]);
-        if(ak)fd.append('apikey',ak);
-        document.querySelectorAll(`#cb-${id} input[type="text"], #cb-${id} select`).forEach(i=>{
-          if(i.id.startsWith('ak-'))return;
-          if(i.type==='file')return;
-          if(i.value)fd.append(i.name||i.id.split('-').pop(),i.value);
-        });
-        res=await fetch(url,{method:'POST',body:fd});
-      }else{
-        const b={};
-        document.querySelectorAll(`#cb-${id} input[type="text"], #cb-${id} select`).forEach(i=>{
-          if(i.id.startsWith('ak-'))return;
-          if(i.type==='file')return;
-          if(i.value)b[i.name||i.id.split('-').pop()]=i.value;
-        });
-        if(ak)b['apikey']=ak;
-        res=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:Object.keys(b).length?JSON.stringify(b):undefined});
-      }
+      const qp=[];$$(`[id^="i-${mid}-"]:not([type="file"])`).forEach(p=>{const n=p.id.replace('i-'+mid+'-','');if(p.value)qp.push(`${n}=${encodeURIComponent(p.value)}`);});
+      if(qp.length)url+='?'+qp.join('&');
+      res=await fetch(url,{method});
     }
-    const ms=Date.now()-t0;const ct=res.headers.get('content-type')||'';
-    rms.textContent=`${ms}ms`;
-
-    // ========== VIDEO ==========
-    if(ct.includes('video/')){
-      const blob=await res.blob();
-      const ou=URL.createObjectURL(blob);
-      CUR_RESP={media:'video',url:ou};
-      rst.textContent=res.status+' OK';rst.className='rs ok';rd.className='rd ok';
-      rb.innerHTML=`<video controls autoplay muted playsinline style="width:100%;max-width:100%;border-radius:8px"><source src="${ou}" type="${ct}"></video>`;
-    }
-    // ========== IMAGE ==========
-    else if(ct.includes('image/')){
-      const blob=await res.blob();
-      const ou=URL.createObjectURL(blob);
-      CUR_RESP={media:'image',url:ou};
-      rst.textContent=res.status+' OK';rst.className='rs ok';rd.className='rd ok';
-      rb.innerHTML=`<img src="${ou}" style="max-width:100%;border-radius:8px" alt="img"/>`;
-    }
-    // ========== AUDIO ==========
-    else if(ct.includes('audio/')||ct.includes('application/ogg')){
-      const blob=await res.blob();
-      const ou=URL.createObjectURL(blob);
-      CUR_RESP={media:'audio',url:ou};
-      rst.textContent=res.status+' OK';rst.className='rs ok';rd.className='rd ok';
-      rb.innerHTML=`<audio controls style="width:100%"><source src="${ou}" type="${ct}"></audio>`;
-    }
-    // ========== JSON ==========
-    else if(ct.includes('application/json')){
-      const d=await res.json();CUR_RESP=d;
-      rst.textContent=res.status+' OK';rst.className='rs ok';rd.className='rd ok';
-      rb.innerHTML=`<pre class="rp">${tj(d,0)}</pre>`;
-    }
-    // ========== TEXT ==========
-    else{
-      const d=await res.text();CUR_RESP=d;
-      rst.textContent=res.status+(res.ok?' OK':' ERROR');rst.className='rs '+(res.ok?'ok':'err');rd.className='rd '+(res.ok?'ok':'err');
-      rb.innerHTML=`<pre class="rp">${esc(d)}</pre>`;
-    }
-    updateCurl(id);
-  }catch(err){
-    rst.textContent='Error';rst.className='rs err';rd.className='rd err';
-    rms.textContent=`${Date.now()-t0}ms`;
-    rb.innerHTML=`<pre class="rp" style="color:var(--red)">// ${err.message}</pre>`;
-  }finally{
-    if(btn){btn.innerHTML='<i class="fas fa-bolt"></i> Execute';btn.disabled=false;}
-  }
+    const ms=Date.now()-t0;rms.textContent=ms+'ms';const ct=res.headers.get('content-type')||'';
+    if(ct.includes('video/')){const blob=await res.blob();const ou=URL.createObjectURL(blob);lastResp='[video]';rd.className='rd ok';rs.textContent=res.status+' OK';rs.className='rs ok';rb.innerHTML=`<video controls autoplay style="width:100%;border-radius:8px"><source src="${ou}" type="${ct}"></video>`;}
+    else if(ct.includes('image/')){const blob=await res.blob();const ou=URL.createObjectURL(blob);lastResp='[image]';rd.className='rd ok';rs.textContent=res.status+' OK';rs.className='rs ok';rb.innerHTML=`<img src="${ou}" style="max-width:100%;border-radius:8px">`;}
+    else if(ct.includes('audio/')){const blob=await res.blob();const ou=URL.createObjectURL(blob);lastResp='[audio]';rd.className='rd ok';rs.textContent=res.status+' OK';rs.className='rs ok';rb.innerHTML=`<audio controls style="width:100%"><source src="${ou}" type="${ct}"></audio>`;}
+    else if(ct.includes('application/json')){const d=await res.json();lastResp=JSON.stringify(d,null,2);rd.className='rd ok';rs.textContent=res.status+' OK';rs.className='rs ok';rb.innerHTML=`<pre class="rp">${tj(d)}</pre>`;}
+    else{const t=await res.text();lastResp=t;rd.className=res.ok?'rd ok':'rd err';rs.textContent=res.status+(res.ok?' OK':' ERROR');rs.className='rs '+(res.ok?'ok':'err');rb.innerHTML=`<pre class="rp">${esc(t)}</pre>`;}
+  }catch(e){rms.textContent=(Date.now()-t0)+'ms';rd.className='rd err';rs.textContent='ERROR';rs.className='rs err';rb.innerHTML=`<pre class="rp" style="color:var(--red)">${e.message}</pre>`;}
+  btn.disabled=false;btn.innerHTML='<i class="fas fa-bolt"></i> Execute';
 }
 
-function showToast(msg,type='ok'){
-  const t=document.getElementById('toast');
-  t.innerHTML=`<i class="fas fa-${type==='ok'?'check-circle':'exclamation-triangle'}"></i> ${msg}`;
-  t.classList.add('show');clearTimeout(t._t);
-  t._t=setTimeout(()=>t.classList.remove('show'),2400);
-}
+$('searchInput').addEventListener('input',function(){const q=this.value.trim().toLowerCase();if(!q){$('search-panel').classList.add('hidden');$('ep-panel').classList.remove('hidden');return;}searchEndpoints(q);});
 
-function setTheme(n){
-  document.documentElement.setAttribute('data-theme',n);localStorage.setItem('nz_t',n);
-  document.querySelectorAll('.to').forEach(e=>e.classList.toggle('active',e.dataset.theme===n));
-  document.getElementById('td').classList.remove('open');
-  const vid=document.getElementById('hero-vid');
-  if(vid){const src=n==='light'?'https://kappa.lol/uJWEb9':'https://kappa.lol/2HLn5j';vid.querySelector('source').setAttribute('src',src);vid.load();}
-  showToast('Tema: '+n);
-}
+async function init(){try{const res=await fetch('/src/config.json?t='+Date.now());CONFIG=await res.json();buildChips();renderByCat();}catch(e){$('ep-panel').innerHTML='<div class="empty" style="color:var(--red)">Error: '+e.message+'</div>';}}
 
-function toggleTD(){document.getElementById('td').classList.toggle('open');}
-
-document.addEventListener('click',e=>{
-  const d=document.getElementById('td'),b=document.getElementById('tb');
-  if(!d.contains(e.target)&&!b.contains(e.target))d.classList.remove('open');
-});
-
-document.getElementById('searchInput')?.addEventListener('input',e=>{
-  const q=e.target.value.trim();
-  if(!q){document.getElementById('search-panel').classList.add('hidden');document.getElementById('ep-panel').classList.remove('hidden');return;}
-  renderEps(q);
-});
-
-async function loadEps(){
-  try{
-    const res=await fetch('/endpoint');
-    if(!res.ok)throw new Error(`HTTP ${res.status}`);
-    const data=await res.json();
-    EPS=convertData(data);renderSidebar();
-  }catch(err){
-    document.getElementById('chips-wrap').innerHTML=`<div class="empty" style="color:var(--red)"><i class="fas fa-triangle-exclamation"></i>Error: ${err.message}</div>`;
-  }
-}
-
-document.addEventListener('DOMContentLoaded',()=>{
-  setTimeout(()=>document.getElementById('splash')?.classList.add('hidden'),2000);
-  loadEps();
-  const s=localStorage.getItem('nz_t')||'dark';
-  document.documentElement.setAttribute('data-theme',s);
-  document.querySelectorAll('.to').forEach(e=>e.classList.toggle('active',e.dataset.theme===s));
-});
-
-window.toggleCard=toggleCard;
-window.execReq=execReq;
-window.updateCurl=updateCurl;window.copyCurl=copyCurl;window.copyResp=copyResp;
+document.addEventListener('DOMContentLoaded',()=>{const s=localStorage.getItem('nz_t')||'dark';document.documentElement.setAttribute('data-theme',s);$$('.to').forEach(e=>e.classList.toggle('active',e.dataset.theme===s));init();});
 </script>
 </body>
 </html>
